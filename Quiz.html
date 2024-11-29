@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz sobre Romeu e Julieta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options {
+            margin: 10px 0;
+        }
+        button {
+            display: block;
+            margin: auto;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .result {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <h1>Quiz: Romeu e Julieta</h1>
+    <div id="quiz"></div>
+    <button id="submit">Enviar Respostas</button>
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+const quizData = [
+    {
+        question: "Quem escreveu 'Romeu e Julieta'?",
+        options: ["William Shakespeare", "Charles Dickens", "Leo Tolstoy", "Mark Twain"],
+        answer: "William Shakespeare"
+    },
+    {
+        question: "Qual é o nome da família de Julieta?",
+        options: ["Montéquio", "Capuleto", "Verona", "Benvólio"],
+        answer: "Capuleto"
+    },
+    {
+        question: "Como Romeu e Julieta se conhecem?",
+        options: ["Em uma festa", "Na escola", "Na rua", "Em uma biblioteca"],
+        answer: "Em uma festa"
+    },
+    {
+        question: "Qual é o destino final de Romeu e Julieta?",
+        options: ["Casam-se e vivem felizes", "Fugem juntos", "Ambos morrem", "Se separam para sempre"],
+        answer: "Ambos morrem"
+    },
+    {
+        question: "Quem é o melhor amigo de Romeu?",
+        options: ["Benvólio", "Mercutio", "Paris", "Tybalt"],
+        answer: "Mercutio"
+    }
+];
+
+const quizContainer = document.getElementById('quiz');
+const resultContainer = document.getElementById('result');
+
+quizData.forEach((item, index) => {
+    const questionElement = document.createElement('div');
+    questionElement.classList.add('question');
+    questionElement.innerHTML = `
+        <p>${index + 1}. ${item.question}</p>
+        <div class="options">
+            ${item.options.map((option, i) => `
+                <label>
+                    <input type="radio" name="question${index}" value="${option}">
+                    ${option}
+                </label>
+            `).join('')}
+        </div>
+    `;
+    quizContainer.appendChild(questionElement);
+});
+
+document.getElementById('submit').addEventListener('click', () => {
+    let score = 0;
+    quizData.forEach((item, index) => {
+        const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
+        if (selectedOption && selectedOption.value === item.answer) {
+            score++;
+        }
+    });
+    resultContainer.innerHTML = `Você acertou ${score} de ${quizData.length} perguntas.`;
+    resultContainer.style.display = 'block';
+});
+</script>
+
+</body>
+</html>

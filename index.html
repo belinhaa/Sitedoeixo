@@ -1,0 +1,104 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fanfics ❤︎</title>
+    <style>
+        @font-face {
+            font-family: 'Comfy Feeling';
+            src: url('fonts/ComfyFeeling.ttf') format('truetype'); /* Verifique o caminho e nome */
+        }
+
+        @font-face {
+            font-family: 'Super Unicorn';
+            src: url('caminho/para/SuperUnicorn.ttf') format('truetype'); /* Altere o caminho para onde a fonte está localizada */
+        }
+
+        body {
+            background-color: #E6E6FA;
+            font-family: 'Comfy Feeling', cursive; /* Aplicando a nova fonte ao corpo */
+            color: #9370DB;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-family: 'Super Unicorn', cursive; /* Aplicando a fonte ao título */
+            font-size: 3em;
+            margin: 20px 0;
+            animation: fadeIn 1s;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        a {
+            color: #BA55D3;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #DA70D6;
+            text-decoration: underline;
+        }
+        img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #FFFFFF;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Histórias de Amor</h1>
+        <p>Criado por Isabela e Giovana</p>
+        <p>Nada como uma boa história de amor curtinha para adoçar o dia! Veja todas as histórias que eu e minha amiga criamos para vocês, tem romances proibidos e fanfics fofas!</p>
+
+        <h2>Nossas Páginas:</h2>
+        <p><a href="gi.html">Fanfics da Giovana</a></p>
+        <p><a href="isa.html">Fanfics da Isabela</a></p>
+        <p><a href="diferencaamorpaixao.html">Diferença entre amor e paixão</a></p>
+        <p><a href="bonus.html">BÔNUS!!</a></p>
+        <p><a href="Quiz.html"> Quiz Romeu e Julieta</a></p>
+        <p><a href="Lovetester.html">Love tester</a></p>
+        
+        <img src="dama vagabo.gif" alt="Imagem relacionada a fanfics">
+    </div>
+    
+    <footer>
+        &copy; 2024 Fanfics de Isabela e Giovana
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const links = document.querySelectorAll("a");
+            links.forEach(link => {
+                link.addEventListener("click", function() {
+                    alert("Você está prestes a visitar uma nova página!");
+                });
+            });
+        });
+    </script>
+</body>
+</html>

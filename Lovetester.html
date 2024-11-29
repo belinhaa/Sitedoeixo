@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Tester</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #e63946;
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            border: 2px solid #e63946;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input:focus {
+            outline: none;
+            border-color: #f1faee;
+            box-shadow: 0 0 5px rgba(0, 230, 230, 0.5);
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #e63946;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #d62839;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #4a4e69;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+<iMG SRC="Coracao.jpg" HEIGHT=250 WIDHT=250 ALT="..." ALIGN=CENTER>
+        <h1>Love Tester</h1>
+        <p>Descubra a compatibilidade amorosa!</p>
+        
+        <input type="text" id="name1" placeholder="Seu Nome" required>
+        <input type="text" id="name2" placeholder="Nome do Par" required>
+        <br>
+        <button onclick="checkLove()">Verificar Amor!</button>
+        
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function checkLove() {
+            const name1 = document.getElementById('name1').value;
+            const name2 = document.getElementById('name2').value;
+
+            if (name1 && name2) {
+                const lovePercentage = Math.floor(Math.random() * 101);
+                let message = "";
+
+                if (lovePercentage > 80) {
+                    message = "O amor está no ar! É um match perfeito!";
+                } else if (lovePercentage > 50) {
+                    message = "Vocês têm uma boa conexão, continue investindo!";
+                } else if (lovePercentage > 30) {
+                    message = "Há algumas semelhanças, mas ainda há espaço para melhorias.";
+                } else {
+                    message = "Talvez vocês sejam melhores amigos do que amantes.";
+                }
+
+                document.getElementById('result').innerText = 
+                    `${name1} e ${name2} têm uma compatibilidade de ${lovePercentage}%. ${message}`;
+            } else {
+                document.getElementById('result').innerText = "Por favor, preencha os dois nomes!";
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+ 
+
